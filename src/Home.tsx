@@ -1,5 +1,3 @@
-import React, { useRef } from "react";
-import { motion, sync, useCycle } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
 const Home = () => {

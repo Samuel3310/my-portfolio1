@@ -2,12 +2,12 @@ import Home from "./Home";
 import Projects from "./Projects";
 import About from "./About";
 import Contact from "./Contact";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { motion, sync, useCycle } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
-import { Navigation } from "./Navigation";
+import Navigation from "./Navigation";
 
 const sidebar = {
   open: (height = 1000) => ({

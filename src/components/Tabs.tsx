@@ -1,5 +1,3 @@
-import React from "react";
-
 const Tabs = () => {
   return (
     <ul className="grid grid-flow-col text-center border-b border-gray-200 text-gray-500">

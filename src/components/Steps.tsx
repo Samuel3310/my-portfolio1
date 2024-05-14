@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FaUserGraduate } from "react-icons/fa6";
 
 const Step = () => {

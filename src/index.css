@@ -9,18 +9,6 @@
   --dark: #000;
 }
 
-body {
-  /* width: 100%;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-}
-
 nav {
   position: absolute;
   top: 0;

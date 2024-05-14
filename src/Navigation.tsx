@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { MenuItem } from "./MenuItem";
+import MenuItem from "./MenuItem";
 import {
   FaHome,
   FaInfoCircle,
@@ -17,17 +17,37 @@ const variants = {
   },
 };
 
-export const Navigation = ({ toggle }) => (
-  <motion.ul variants={variants}>
-    {itemIds.map((i) => (
-      <MenuItem i={i} toggle={toggle} key={i.title} />
-    ))}
-  </motion.ul>
-);
+type ToggleIt = () => void;
 
-const itemIds = [
-  { title: "Home", Icon: <FaHome size={24} />, to: "/" },
-  { title: "About", Icon: <FaInfoCircle size={24} />, to: "/about" },
-  { title: "Projects", Icon: <FaProjectDiagram size={24} />, to: "/projects" },
-  { title: "Contact", Icon: <FaEnvelope size={24} />, to: "/contact" },
-];
+type MenuItemData = {
+  title: string;
+  Icon: React.ReactNode;
+  to: string;
+};
+
+type NavigationProps = {
+  toggle: ToggleIt;
+};
+
+const Navigation: React.FC<NavigationProps> = ({ toggle }) => {
+  const itemIds: MenuItemData[] = [
+    { title: "Home", Icon: <FaHome size={24} />, to: "/" },
+    { title: "About", Icon: <FaInfoCircle size={24} />, to: "/about" },
+    {
+      title: "Projects",
+      Icon: <FaProjectDiagram size={24} />,
+      to: "/projects",
+    },
+    { title: "Contact", Icon: <FaEnvelope size={24} />, to: "/contact" },
+  ];
+
+  return (
+    <motion.ul variants={variants}>
+      {itemIds.map((i) => (
+        <MenuItem key={i.title} i={i} toggle={toggle} />
+      ))}
+    </motion.ul>
+  );
+};
+
+export default Navigation;

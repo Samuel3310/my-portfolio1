@@ -1,4 +1,4 @@
-import React from "react";
+
 import Step from "./components/Steps";
 
 const About = () => {

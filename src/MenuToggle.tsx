@@ -1,7 +1,14 @@
-import * as React from "react";
 import { motion } from "framer-motion";
+import React from "react";
+type PathProps = {
+  className: string;
+  variants: {
+    closed: { d: string } | { opacity: number };
+    open: { d: string } | { opacity: number };
+  };
+};
 
-const Path = (props) => (
+const Path: React.FC<PathProps> = (props) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
@@ -11,10 +18,16 @@ const Path = (props) => (
   />
 );
 
-export const MenuToggle = ({ toggle }) => (
+type ToggleFunction = () => void;
+
+type MenuToggleProps = {
+  toggle: ToggleFunction;
+};
+
+export const MenuToggle: React.FC<MenuToggleProps> = ({ toggle }) => (
   <button
     onClick={toggle}
-    className="w-14 h-14 rounded-full fixed top-[13px] left-[13px] bg-transparent flex items-center justify-center "
+    className="w-14 h-14 rounded-full fixed top-[13px] left-[13px] bg-transparent flex items-center justify-center"
   >
     <svg width="30" height="30" viewBox="0 0 23 23">
       <Path
@@ -26,12 +39,10 @@ export const MenuToggle = ({ toggle }) => (
       />
       <Path
         className="path"
-        d="M 2 9.423 L 20 9.423"
         variants={{
           closed: { opacity: 1 },
           open: { opacity: 0 },
         }}
-        transition={{ duration: 0.1 }}
       />
       <Path
         className="path"

@@ -1,6 +1,7 @@
-import * as React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+
+import React from "react";
 
 const variants = {
   open: {
@@ -19,7 +20,18 @@ const variants = {
   },
 };
 
-export const MenuItem = ({ i, toggle }) => {
+type ToggleIt = () => void;
+
+type MenuItemProps = {
+  i: {
+    to: string;
+    Icon: React.ReactNode;
+    title: string;
+  };
+  toggle: ToggleIt;
+};
+
+const MenuItem: React.FC<MenuItemProps> = ({ i, toggle }) => {
   return (
     <motion.li
       variants={variants}
@@ -29,7 +41,7 @@ export const MenuItem = ({ i, toggle }) => {
       <Link
         to={i.to}
         className="flex gap-5 items-center p-4 bg-[#07beb8] mt-4 rounded-md nav"
-        onClick={() => toggle()}
+        onClick={toggle}
       >
         <div className="icon">{i.Icon}</div>
         <div className="text-placeholder">{i.title}</div>
@@ -37,3 +49,5 @@ export const MenuItem = ({ i, toggle }) => {
     </motion.li>
   );
 };
+
+export default MenuItem;
