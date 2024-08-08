@@ -47,12 +47,7 @@ const About = () => {
                     experience and functionality of Healthsquarepay. Leveraging
                     React, we're striving to create a platform that delivers
                     intuitive interactions and streamlined processes to users.
-                    <br />
-                    My journey as a freelancer has been enriched by my
-                    contributions to various projects, including notable ones
-                    like onecap.africa and Trutab.com. These experiences have
-                    honed my React development skills and equipped me with a
-                    deep understanding of user-centric design principles
+                    
                   </p>
                 </div>
               </div>
